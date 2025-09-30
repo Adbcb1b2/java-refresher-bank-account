@@ -4,12 +4,21 @@ public class BankAccount {
     private int accountID;
     private String ownerName;
     private float balance;
+    private static float interestRate;
 
     public BankAccount(int accountID, String ownerName, float balance){
         super(); // Call to the superclass's constructor
         this.accountID = accountID;
         this.ownerName = ownerName;
         setBalance(balance); // Use method because there is validation logic
+    }
+
+    public static float getInterestRate() {
+        return interestRate;
+    }
+
+    public static void setInterestRate(float interestRate){
+        BankAccount.interestRate = interestRate;
     }
 
     public void deposit(float amount){

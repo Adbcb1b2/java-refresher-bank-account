@@ -13,6 +13,7 @@ public class BankAccountTester {
         System.out.println("Owner: " + account.getOwnerName());
 
         BankAccount account2 = new BankAccount(2, "Steve Shilling", 5000f);
+        BankAccount.setInterestRate(5.5f);
         BankAccount account3 = new BankAccount(3, "Bob Richards", 999.99f);
 
         System.out.println("account 2 is owned by" + account2.getOwnerName());
@@ -20,5 +21,8 @@ public class BankAccountTester {
 
         account2.deposit(100f);
         account3.deposit(50f);
+
+        System.out.println("account 2 interest rate is: " + BankAccount.getInterestRate());
+        System.out.println("account 3 interest rate is: " + BankAccount.getInterestRate());
     }
 }
