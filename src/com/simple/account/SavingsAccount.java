@@ -13,4 +13,16 @@ public class SavingsAccount extends BankAccount {
             this.setBalance(newBalance);
         }
     }
+
+    public void print() {
+        System.out.println("\nSavings Summary:");
+        super.print();
+        System.out.println(" Interest rate:" + this.getInterestRate());
+        System.out.println("Minimum Balance:" + minimumBalance);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "with interest rate " + this.getInterestRate() + " and minimum balance " + this.minimumBalance;
+    }
 }

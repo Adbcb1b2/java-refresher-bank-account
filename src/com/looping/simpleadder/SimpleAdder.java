@@ -5,6 +5,8 @@ public class SimpleAdder {
     public static void main(String[] args) {
         int sum = 0;
         Scanner scan = new Scanner(System.in);
+        int numbers[] = new int[10];
+
         for (int x = 0; x < 10; x++) {
             System.out.println("Please enter integer #" + (x+1));
             int input = scan.nextInt();
@@ -17,6 +19,11 @@ public class SimpleAdder {
                 break;
             }
             sum += input;
+            numbers[x] = input;
+        }
+        System.out.println("The numbers you entered were: " );
+        for(int eachNumber: numbers){
+            System.out.println(eachNumber);
         }
         System.out.println("The sum is " + sum);
         scan.close();
