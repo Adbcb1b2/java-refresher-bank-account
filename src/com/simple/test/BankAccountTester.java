@@ -1,6 +1,7 @@
 package com.simple.test;
 
 import com.simple.account.BankAccount;
+import com.simple.account.SavingsAccount;
 
 public class BankAccountTester {
     public static void main(String[] args) {
@@ -24,5 +25,13 @@ public class BankAccountTester {
 
         System.out.println("account 2 interest rate is: " + BankAccount.getInterestRate());
         System.out.println("account 3 interest rate is: " + BankAccount.getInterestRate());
+
+        SavingsAccount sAccount = new SavingsAccount(4, "Donny K", 1f);
+
+        System.out.println("The Savings Account balance is: " + sAccount.getBalance());
+
+        sAccount.deposit(500f);
+        sAccount.payInterest();
+        System.out.println("The SavingAccount's new balance is " + sAccount.getBalance());
     }
 }
