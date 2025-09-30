@@ -4,27 +4,21 @@ import com.simple.account.BankAccount;
 
 public class BankAccountTester {
     public static void main(String[] args) {
-        BankAccount account = new BankAccount();
 
-        account.setAccountID(1);
-        account.setOwnerName("Kim Richards");
-        account.setBalance(100f);
-
+        BankAccount account = new BankAccount(1, "Kim Richards", 100f);
         account.deposit(50f);
-
-        System.out.println("A bank account");
+        System.out.println("A Bank Account");
         System.out.println("ID: " + account.getAccountID());
         System.out.println("Balance: " + account.getBalance());
         System.out.println("Owner: " + account.getOwnerName());
 
-        BankAccount account2 = new BankAccount();
-        account2.setAccountID(2);
-        account2.setOwnerName("Steve Shilling");
-        account2.setBalance(5000f);
+        BankAccount account2 = new BankAccount(2, "Steve Shilling", 5000f);
+        BankAccount account3 = new BankAccount(3, "Bob Richards", 999.99f);
 
-        BankAccount account3 = new BankAccount();
-        account3.setAccountID(3);
-        account3.setOwnerName("Walter Sobcheck");
-        account3.setBalance(1000000f);
+        System.out.println("account 2 is owned by" + account2.getOwnerName());
+        System.out.println("account 3 is owned by" + account3.getOwnerName());
+
+        account2.deposit(100f);
+        account3.deposit(50f);
     }
 }
