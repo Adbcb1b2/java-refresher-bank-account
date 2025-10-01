@@ -9,7 +9,13 @@ public class SimpleAdder {
 
         for (int x = 0; x < 10; x++) {
             System.out.println("Please enter integer #" + (x+1));
-            int input = scan.nextInt();
+            int input = 0;
+            try{
+                input = scan.nextInt();
+            } catch(java.util.InputMismatchException exception){
+                System.out.println("Please enter only numeric values");
+                break;
+            }
             // Ignore negative numbers, proceed to next iteraction
             if(input < 0){
                 continue;

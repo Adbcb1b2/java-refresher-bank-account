@@ -66,4 +66,11 @@ public class BankAccount {
     public String toString(){
         return "An account with id " + this.getAccountID() + " with balance " + this.getBalance() + " owned by " + this.getOwnerName();
     }
+
+    public void withdraw(float amount) throws InsufficientFundsException{
+        if (amount > this.getBalance()){
+            throw new InsufficientFundsException("Amount " + amount + " exceeds balance " + this.getBalance());
+        }
+        this.setBalance(this.getBalance() - amount);
+    }
 }
