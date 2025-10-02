@@ -1,6 +1,6 @@
 package com.simple.account;
 
-public class BankAccount {
+public class BankAccount implements Account {
     private int accountID;
     private String ownerName;
     private float balance;
